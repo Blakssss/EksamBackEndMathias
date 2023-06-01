@@ -24,4 +24,11 @@ public List<RaceSeason> getAllRaceSeasons() {
         () -> new ResourceNotFoundException("Could not find a Race Season with the ID: " + id + " from the database"));
   }
 
+  public List<SailboatsInRaces> getAllSailboatsInRaces(int raceId){
+    List<RaceSeason> raceSeasonList = raceSeasonRepository.findRaceSeasonBySailRaceId(raceId);
+    List<SailboatsInRaces> sailboatsInRacesList = new ArrayList<>();
+
+
+  return sailboatsInRacesList;
+  }
 }
