@@ -27,10 +27,10 @@ import java.util.List;
     private int id;
 
 
-  // One Treatment to many BookedTreatment.
-  @OneToMany(mappedBy = "sailboat", cascade = CascadeType.REMOVE) // Her referere vi til treatment variablen inde i BookedTreatment klassen.
+  @OneToMany(mappedBy = "sailboat", cascade = CascadeType.REMOVE)
   @JsonBackReference
   private List<RaceSeason> listOfRaceSeason;
+
 
   private String name;
   private String type;

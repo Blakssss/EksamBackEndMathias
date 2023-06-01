@@ -29,8 +29,7 @@ public class SailRace {
 
   private String name;
 
-  // One Treatment to many BookedTreatment.
-  @OneToMany(mappedBy = "sailRace", cascade = CascadeType.REMOVE) // Her referere vi til treatment variablen inde i BookedTreatment klassen.
+  @OneToMany(mappedBy = "sailRace", cascade = CascadeType.REMOVE)
   @JsonBackReference
   private List<RaceSeason> listOfRaceSeason;
 

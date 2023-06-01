@@ -37,9 +37,6 @@ public class SailboatService {
             throw new ResourceAlreadyExistsException("Sailboat with id: " + sailboat.getId() + " already exists and therefore can't be added.");
             // Add en exception der kan handle hvis man prøver at lave en sailboat uden et parti der eksistere. Brug resourcenotfoundexception.
         }
-
-
-
         // Hvis den IKKE allerede eksistere, så må vi adde den.
         Sailboat newSailboat = sailboatRepository.save(sailboat);
         return new ResponseEntity<>(newSailboat, HttpStatus.OK);
@@ -68,7 +65,7 @@ public class SailboatService {
         }
         Sailboat deletedSailboat = getSailboatById(id);
         sailboatRepository.deleteById(id);
-        return new ResponseEntity<>(deletedSailboat, HttpStatus.OK); // Lav en log i console i frontenden der siger noget med ("Du har slettet denne bruger...)
+        return new ResponseEntity<>(deletedSailboat, HttpStatus.OK);
     }
     
 }
